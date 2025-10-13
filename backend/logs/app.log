@@ -1,0 +1,9 @@
+{"level":"INFO","time":"2025-09-29T10:32:34.178+0800","caller":"logger/logger.go:43","msg":"server starting..."}
+{"level":"INFO","time":"2025-09-29T10:32:46.786+0800","caller":"logger/logger.go:43","msg":"ping endpoint hit"}
+{"level":"INFO","time":"2025-09-29 10:35:57.808","caller":"cmd/main.go:20","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-29 10:36:14.194","caller":"cmd/main.go:16","msg":"ping endpoint hit"}
+{"level":"INFO","time":"2025-09-29 10:36:48.182","caller":"cmd/main.go:16","msg":"ping endpoint hit"}
+{"level":"INFO","time":"2025-09-29 10:38:55","caller":"cmd/main.go:20","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-29 10:40:01","caller":"cmd/main.go:20","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:04:09","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:04:09","caller":"backend/main.go:18","msg":"server starting on :8080"}

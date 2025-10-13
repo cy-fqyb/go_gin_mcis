@@ -1,0 +1,34 @@
+{"level":"INFO","time":"2025-09-30 10:07:34","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:07:34","caller":"backend/main.go:18","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:07:45","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:07:45","caller":"backend/main.go:18","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:08:25","caller":"controller/user_controller.go:15","msg":"ping endpoint hit"}
+{"level":"INFO","time":"2025-09-30 10:09:56","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:09:56","caller":"backend/main.go:18","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:14:47","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:14:47","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:14:47","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:16:48","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:16:48","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:16:48","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:17:07","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:17:07","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:17:07","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:17:17","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:17:17","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:17:17","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:17:27","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:17:27","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:17:27","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:22:12","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:22:12","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:22:12","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 10:22:58","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 10:22:58","caller":"router/router.go:13","msg":"Routes registered"}
+{"level":"INFO","time":"2025-09-30 10:22:58","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 16:54:28","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 16:54:28","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 16:57:22","caller":"db/db.go:32","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 16:57:22","caller":"backend/main.go:21","msg":"server starting on :8080"}
+{"level":"INFO","time":"2025-09-30 17:00:57","caller":"db/db.go:37","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-09-30 17:00:57","caller":"backend/main.go:21","msg":"server starting on :8080"}

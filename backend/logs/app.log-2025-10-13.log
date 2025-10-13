@@ -1,0 +1,10 @@
+{"level":"FATAL","time":"2025-10-13 10:47:19","caller":"db/db.go:35","msg":"❌ 连接数据库失败: unable to open tcp connection with host '127.0.0.1:11433': dial tcp 127.0.0.1:11433: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 10:47:32","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 127.0.0.1:1521: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 10:48:32","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 127.0.0.1:1521: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 10:50:40","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 127.0.0.1:1521: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 10:51:04","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 127.0.0.1:1521: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 10:51:19","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 127.0.0.1:1521: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-13 11:08:35","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp: lookup http on 172.31.64.1:53: no such host"}
+{"level":"FATAL","time":"2025-10-13 11:09:03","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp: lookup http on 172.31.64.1:53: no such host"}
+{"level":"FATAL","time":"2025-10-13 11:11:43","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 192.168.1.241:1521: i/o timeout"}
+{"level":"FATAL","time":"2025-10-13 11:29:24","caller":"db/db.go:61","msg":"❌ 连接数据库失败: dial tcp 192.168.1.241:1521: i/o timeout"}

@@ -1,0 +1,2 @@
+{"level":"INFO","time":"2025-10-09 09:41:24","caller":"db/db.go:37","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-10-09 09:41:24","caller":"backend/main.go:21","msg":"server starting on :8080"}
