@@ -1,10 +1,13 @@
 package db
 
 import (
+	"context"
+	"database/sql"
 	"fmt"
 	"go_gin_mcis/pkg/logger"
+	"time"
 
-	oracle "github.com/godoes/gorm-oracle"
+	_ "github.com/godror/godror"
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
@@ -38,28 +41,35 @@ func InitDB() {
 	logger.Info("✅ 成功连接到 SQL Server")
 }
 
-func InitOrcalDB() {
-	// 数据库配置
-	server := "192.168.1.241"
+var OracleDB *sql.DB
+
+func InitOracleDB() {
+	server := "172.31.66.145"
 	port := 1521
-	user := "sys"
-	password := "123456"
-	database := "orcl"
+	user := "mcis_kezhou"
+	password := "mcis_kezhou"
+	service := "orcl"
 
-	// 构造连接字符串
-	dsn := fmt.Sprintf("oracle://%s:%s@%s:%d/%s",
-		user, password, server, port, database)
+	dsn := fmt.Sprintf("%s/%s@%s:%d/%s", user, password, server, port, service)
+	logger.Info("Oracle DSN: ", dsn)
 
-	// 连接数据库
-	var err error
-	DB, err = gorm.Open(oracle.Open(dsn), &gorm.Config{
-		NamingStrategy: schema.NamingStrategy{
-			SingularTable: true, // 禁用复数表名
-		},
-	})
+	db, err := sql.Open("godror", dsn)
 	if err != nil {
-		logger.Fatalf("❌ 连接数据库失败: %v", err)
+		logger.Fatalf("❌ 连接 Oracle 失败: %v", err)
 	}
 
+	// 连接池配置
+	db.SetMaxOpenConns(50)
+	db.SetMaxIdleConns(10)
+	db.SetConnMaxLifetime(60 * time.Minute)
+
+	// 测试连接
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := db.PingContext(ctx); err != nil {
+		logger.Fatalf("❌ Ping Oracle 失败: %v", err)
+	}
+
+	OracleDB = db
 	logger.Info("✅ 成功连接到 Oracle 数据库")
 }

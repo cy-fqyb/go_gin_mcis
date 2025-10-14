@@ -1,0 +1,20 @@
+{"level":"INFO","time":"2025-10-14 09:46:41","caller":"backend/main.go:45","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 09:54:30","caller":"backend/main.go:46","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:04:06","caller":"backend/main.go:46","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:10:30","caller":"backend/main.go:56","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:11:18","caller":"backend/main.go:56","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:13:33","caller":"backend/main.go:60","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:18:17","caller":"backend/main.go:34","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:18:54","caller":"backend/main.go:33","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:20:03","caller":"backend/main.go:29","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:25:53","caller":"backend/main.go:29","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 10:28:40","caller":"controller/uload_file.go:57","msg":"File uploaded successfully: uploads/伊雷娜.gif"}
+{"level":"INFO","time":"2025-10-14 13:40:25","caller":"backend/main.go:29","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 13:41:01","caller":"controller/uload_file.go:57","msg":"File uploaded successfully: uploads/01a22b1be0014985a00772ef1ae604b4.png"}
+{"level":"INFO","time":"2025-10-14 13:44:31","caller":"backend/main.go:29","msg":"server starting on :8081"}
+{"level":"INFO","time":"2025-10-14 13:44:43","caller":"db/db.go:54","msg":"Oracle DSN: mcis_kezhou/mcis_kezhou@172.31.66.145:1521/orcl"}
+{"level":"FATAL","time":"2025-10-14 13:44:43","caller":"db/db.go:70","msg":"❌ Ping Oracle 失败: ORA-00000: DPI-1047: Cannot locate a 64-bit Oracle Client library: \"libclntsh.so: cannot open shared object file: No such file or directory\". See https://oracle.github.io/odpi/doc/installation.html#linux for help"}
+{"level":"FATAL","time":"2025-10-14 13:53:08","caller":"db/db.go:38","msg":"❌ 连接数据库失败: unable to open tcp connection with host '127.0.0.1:11433': dial tcp 127.0.0.1:11433: connect: connection refused"}
+{"level":"FATAL","time":"2025-10-14 13:54:12","caller":"db/db.go:38","msg":"❌ 连接数据库失败: read tcp 127.0.0.1:40326->127.0.0.1:11433: read: connection reset by peer"}
+{"level":"INFO","time":"2025-10-14 13:54:37","caller":"db/db.go:41","msg":"✅ 成功连接到 SQL Server"}
+{"level":"INFO","time":"2025-10-14 13:54:37","caller":"backend/main.go:32","msg":"server starting on :8081"}
