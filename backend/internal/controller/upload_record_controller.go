@@ -1,8 +1,11 @@
 package controller
 
 import (
+	"encoding/json"
 	"go_gin_mcis/internal/dto"
 	"go_gin_mcis/internal/service"
+	"go_gin_mcis/pkg/logger"
+	"go_gin_mcis/pkg/result"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,17 +21,18 @@ func GetUploadRecords(c *gin.Context) {
 	var query dto.UploadRecordQuery
 
 	if err := c.ShouldBindJSON(&query); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		result.Fail(c, http.StatusBadRequest, err.Error())
 		return
 	}
 
-	records, err := service.GetUploadRecord(query)
+	queryJson, _ := json.Marshal(query)
+	logger.Info("Received query: ", string(queryJson))
+
+	records, err := service.GetUploadRecordByType(*query.UploadType, query)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		result.Fail(c, http.StatusInternalServerError, err.Error())
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"data": records,
-	})
+	result.Success(c, records)
 }

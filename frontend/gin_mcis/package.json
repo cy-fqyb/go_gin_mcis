@@ -8,11 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.1.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-react": "^1.0.6",
+    "antd": "^5.27.4",
+    "clsx": "^2.1.1",
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-simplemde-editor": "^5.2.0",
+    "simplemde": "^1.11.2"
   },
   "devDependencies": {
     "typescript": "^5",

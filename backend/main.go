@@ -26,7 +26,9 @@ func main() {
 			"http://172.31.66.145:3000",
 		},
 	}))
-
+	// 全局请求日志中间件
+	r.Use(middleware.RequestLogger())
+	// 注册路由
 	controller.InitController(r.Group("/api"))
 
 	logger.Info("server starting on :8081")

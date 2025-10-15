@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"go_gin_mcis/pkg/logger"
+	"go_gin_mcis/pkg/result"
 	"io"
 	"os"
 	"path/filepath"
@@ -19,14 +19,14 @@ func UploadFile(c *gin.Context) {
 	// 限制上传大小：10 MB
 	err := c.Request.ParseMultipartForm(10 << 20)
 	if err != nil {
-		c.JSON(400, gin.H{"error": "Failed to parse multipart form", "detail": err.Error()})
+		result.Fail(c, 400, "Failed to parse multipart form: "+err.Error())
 		return
 	}
 
 	// 获取文件
 	file, header, err := c.Request.FormFile("file")
 	if err != nil {
-		c.JSON(400, gin.H{"error": "Failed to retrieve file", "detail": err.Error()})
+		result.Fail(c, 400, "Failed to retrieve file: "+err.Error())
 		return
 	}
 	defer file.Close()
@@ -34,7 +34,7 @@ func UploadFile(c *gin.Context) {
 	// 确保 uploads 目录存在
 	uploadDir := "./uploads"
 	if err := os.MkdirAll(uploadDir, os.ModePerm); err != nil {
-		c.JSON(500, gin.H{"error": "Failed to create uploads directory", "detail": err.Error()})
+		result.Fail(c, 500, "Failed to create uploads directory: "+err.Error())
 		return
 	}
 
@@ -44,20 +44,17 @@ func UploadFile(c *gin.Context) {
 	// 创建目标文件
 	dst, err := os.Create(dstPath)
 	if err != nil {
-		c.JSON(500, gin.H{"error": "Failed to create destination file", "detail": err.Error(), "path": dstPath})
+		result.Fail(c, 500, "Failed to create destination file: "+err.Error())
 		return
 	}
 	defer dst.Close()
 
 	// 复制内容
 	if _, err := io.Copy(dst, file); err != nil {
-		c.JSON(500, gin.H{"error": "Failed to save file", "detail": err.Error()})
+		result.Fail(c, 500, "Failed to save file: "+err.Error())
 		return
 	}
-	logger.Info("File uploaded successfully: " + dstPath)
-
-	c.JSON(200, gin.H{
-		"message":  "File uploaded successfully",
+	result.Success(c, gin.H{
 		"filename": header.Filename,
 		"path":     dstPath,
 	})
