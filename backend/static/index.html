@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>设备维修原始记录表</title>
+    <style>
+        body {
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4 内容容器 */
+        .a4-wrapper {
+            width: 190mm;
+        }
+
+        .record-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        table.record-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .record-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            vertical-align: middle;
+            word-break: break-all;
+        }
+
+        .record-table input,
+        .record-table select {
+            width: 95%;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* textarea 自动撑满整个 td */
+        .td-textarea {
+            position: relative;
+            padding: 0;
+        }
+
+        .td-textarea textarea {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            resize: none;
+            outline: none;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        /* 打印优化 */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .a4-wrapper {
+                width: 190mm;
+                margin: 0 auto;
+            }
+
+            input,
+            textarea,
+            select {
+                border: none !important;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="a4-wrapper">
+
+        <div class="record-title">设备维修原始记录表</div>
+
+        <table class="record-table">
+
+            <!-- 第一部分 -->
+            <tr>
+                <td rowspan="3" style="width: 18%;">故障设备具体位置</td>
+                <td rowspan="3"></td>
+                <td style="width: 20%;">故障报修时间</td>
+                <td name="gzbxsj"><input type="text"></td>
+                <td style="width: 20%;">报修人</td>
+                <td name="bxr">
+                    <select>
+                        <option value="值班员">值班员</option>
+                        <option value="用户">用户</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>维护人员到达现场时间</td>
+                <td name="whryddxcsj"><input type="text"></td>
+                <td>维修人员</td>
+                <td name="wxry"><input type="text"></td>
+            </tr>
+            <tr>
+                <td>完成维修时间</td>
+                <td name="wxxcsj"><input type="text"></td>
+                <td>维修车辆</td>
+                <td name="wxcl"><input type="text"></td>
+            </tr>
+
+            <!-- 第二部分 -->
+            <tr>
+                <td rowspan="2">系统设备档案</td>
+                <td>设备名称</td>
+                <td colspan="2" name="sbmc"><input type="text"></td>
+                <td rowspan="2" colspan="2">维修及处理所需专用工具、仪器、器材、备件等：</td>
+            </tr>
+            <tr>
+                <td>规格型号</td>
+                <td colspan="2" name="ggxh"><input type="text"></td>
+            </tr>
+
+            <!-- 第三部分 -->
+            <tr>
+                <td style="height: 120px;">故障原因分析</td>
+                <td colspan="5" class="td-textarea" name="gzyyfx">
+                    <textarea></textarea>
+                </td>
+            </tr>
+
+            <!-- 第四部分 -->
+            <tr>
+                <td style="height: 200px;">维修过程及结果</td>
+                <td colspan="5" class="td-textarea" name="wxgcjgj">
+                    <textarea></textarea>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script>
+        // 禁用右键菜单
+        // document.addEventListener('contextmenu', function (e) {
+        //     e.preventDefault();
+        //     alert("右键菜单已被禁用");
+        // });
+
+        // 禁用 F12 与 Ctrl+Shift+I
+        // document.addEventListener('keydown', function (e) {
+        //     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')) {
+        //         e.preventDefault();
+        //         alert("开发者工具已被禁用");
+        //     }
+        // });
+
+        // 页面加载后初始化 + 自动收集表单数据
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("页面加载完成，执行初始化操作");
+
+            const recordData = {};
+            const tds = document.querySelectorAll('td[name]');
+            tds.forEach(td => {
+                const name = td.getAttribute('name');
+                const input = td.querySelector('input');
+                const textarea = td.querySelector('textarea');
+                const select = td.querySelector('select');
+                if (input) recordData[name] = input.value;
+                else if (textarea) recordData[name] = textarea.value;
+                else if (select) recordData[name] = select.value;
+            });
+            console.log(recordData);
+
+            const table = document.querySelector('.record-table');
+            table.addEventListener('input', function (e) {
+                const target = e.target;
+                const td = target.closest('td[name]');
+                if (td) {
+                    const name = td.getAttribute('name');
+                    recordData[name] = target.value;
+                    console.log(recordData);
+                }
+            });
+
+            table.addEventListener('change', function (e) {
+                const target = e.target;
+                if (target.tagName.toLowerCase() === 'select') {
+                    const td = target.closest('td[name]');
+                    if (td) {
+                        const name = td.getAttribute('name');
+                        recordData[name] = target.value;
+                        console.log(recordData);
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

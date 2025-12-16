@@ -1,0 +1,129 @@
+{"level":"INFO","time":"2025-10-22 10:12:51","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{8080 debug} {127.0.0.1 11433 sa Cy2466579213! fiber_test} {My_Gin_App 1.0.1 [gin viper hotreload]} {true 3} map[level1:map[level2:map[key:value]]] {http://www.wuyouyunyu.com:8090/mcis-web/api/woman/getEndCase.do 0 */3 * * * * atssrmyy atssrmyy  }}"}
+{"level":"ERROR","time":"2025-10-22 10:12:51","caller":"db/db.go:35","msg":"❌ 连接数据库失败: read tcp 127.0.0.1:42874->127.0.0.1:11433: read: connection reset by peer"}
+{"level":"INFO","time":"2025-10-22 10:12:51","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: 0 */3 * * * *"}
+{"level":"INFO","time":"2025-10-22 10:12:51","caller":"service/endcase_scheduler.go:262","msg":"✅ EndCaseScheduler reloaded (cron: 0 */3 * * * *, jobID: 1)"}
+{"level":"INFO","time":"2025-10-22 10:12:51","caller":"cmd/start.go:62","msg":"server starting on :%d8080"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"config/config.go:76","msg":"🔄 配置文件变更: /home/fqyb/go_projects/go_gin_mcis/backend/config.yaml"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{0 } { 0   } {  []} {false 0} map[] {     }}"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"cmd/start.go:57","msg":"🔄 配置变更，重新初始化数据库和调度器"}
+{"level":"ERROR","time":"2025-10-22 10:13:25","caller":"db/db.go:35","msg":"❌ 连接数据库失败: unable to open tcp connection with host 'localhost:1433': dial tcp 127.0.0.1:1433: connect: connection refused"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: "}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"service/endcase_scheduler.go:246","msg":"♻️ 移除旧任务 (jobID: 1)"}
+{"level":"ERROR","time":"2025-10-22 10:13:25","caller":"cmd/start.go:50","msg":"failed to start/reload scheduler: empty spec string"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"config/config.go:76","msg":"🔄 配置文件变更: /home/fqyb/go_projects/go_gin_mcis/backend/config.yaml"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{8080 debug} {127.0.0.1 11433 sa Cy2466579213! fiber_test} {My_Gin_App 1.0.1 [gin viper hotreload]} {true 3} map[level1:map[level2:map[key:value]]] {http://www.wuyouyunyu.com:8090/mcis-web/api/woman/getEndCase.do 0 */2 * * * * atssrmyy atssrmyy  }}"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"cmd/start.go:57","msg":"🔄 配置变更，重新初始化数据库和调度器"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"db/db.go:39","msg":"✅ 成功连接到 SQL Server (TLS 已兼容)"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: 0 */2 * * * *"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"service/endcase_scheduler.go:246","msg":"♻️ 移除旧任务 (jobID: 1)"}
+{"level":"INFO","time":"2025-10-22 10:13:25","caller":"service/endcase_scheduler.go:262","msg":"✅ EndCaseScheduler reloaded (cron: 0 */2 * * * *, jobID: 2)"}
+{"level":"INFO","time":"2025-10-22 10:14:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 10:14:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 10:14:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 10:14:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 10:14:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 10:14:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 10:14:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 10:14:02","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 2.403355921s"}
+{"level":"INFO","time":"2025-10-22 10:16:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 10:16:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 10:16:01","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 1.813344853s"}
+{"level":"INFO","time":"2025-10-22 10:18:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 10:18:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 10:18:01","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 1.953426924s"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"config/config.go:76","msg":"🔄 配置文件变更: /home/fqyb/go_projects/go_gin_mcis/backend/config.yaml"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{0 } { 0   } {  []} {false 0} map[] {     }}"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"cmd/start.go:57","msg":"🔄 配置变更，重新初始化数据库和调度器"}
+{"level":"ERROR","time":"2025-10-22 10:18:49","caller":"db/db.go:35","msg":"❌ 连接数据库失败: unable to open tcp connection with host 'localhost:1433': dial tcp 127.0.0.1:1433: connect: connection refused"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: "}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"service/endcase_scheduler.go:246","msg":"♻️ 移除旧任务 (jobID: 2)"}
+{"level":"ERROR","time":"2025-10-22 10:18:49","caller":"cmd/start.go:50","msg":"failed to start/reload scheduler: empty spec string"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"config/config.go:76","msg":"🔄 配置文件变更: /home/fqyb/go_projects/go_gin_mcis/backend/config.yaml"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{8080 debug} {127.0.0.1 11433 sa Cy2466579213! fiber_test} {My_Gin_App 1.0.1 [gin viper hotreload]} {true 3} map[level1:map[level2:map[key:value]]] {http://www.wuyouyunyu.com:8090/mcis-web/api/woman/getEndCase.do 0 */30 * * * * atssrmyy atssrmyy  }}"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"cmd/start.go:57","msg":"🔄 配置变更，重新初始化数据库和调度器"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"db/db.go:39","msg":"✅ 成功连接到 SQL Server (TLS 已兼容)"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: 0 */30 * * * *"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"service/endcase_scheduler.go:246","msg":"♻️ 移除旧任务 (jobID: 2)"}
+{"level":"INFO","time":"2025-10-22 10:18:49","caller":"service/endcase_scheduler.go:262","msg":"✅ EndCaseScheduler reloaded (cron: 0 */30 * * * *, jobID: 3)"}
+{"level":"INFO","time":"2025-10-22 10:19:40","caller":"config/config.go:95","msg":"✅ 加载配置文件成功: &{{8080 debug} {127.0.0.1 11433 sa Cy2466579213! fiber_test} {My_Gin_App 1.0.1 [gin viper hotreload]} {true 3} map[level1:map[level2:map[key:value]]] {http://www.wuyouyunyu.com:8090/mcis-web/api/woman/getEndCase.do 0 */30 * * * * atssrmyy atssrmyy  }}"}
+{"level":"INFO","time":"2025-10-22 10:19:40","caller":"db/db.go:39","msg":"✅ 成功连接到 SQL Server (TLS 已兼容)"}
+{"level":"INFO","time":"2025-10-22 10:19:40","caller":"service/endcase_scheduler.go:241","msg":"🔁 Reloading EndCaseScheduler with new cron: 0 */30 * * * *"}
+{"level":"INFO","time":"2025-10-22 10:19:40","caller":"service/endcase_scheduler.go:262","msg":"✅ EndCaseScheduler reloaded (cron: 0 */30 * * * *, jobID: 1)"}
+{"level":"INFO","time":"2025-10-22 10:19:40","caller":"cmd/start.go:62","msg":"server starting on :%d8080"}
+{"level":"INFO","time":"2025-10-22 10:30:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 10:30:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 10:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 10:30:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 10:30:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 10:30:02","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 2.210121303s"}
+{"level":"INFO","time":"2025-10-22 11:00:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 11:00:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 11:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 11:00:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 11:00:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 11:00:02","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 2.00124496s"}
+{"level":"INFO","time":"2025-10-22 11:30:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 11:30:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 11:30:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 11:30:02","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 1.922637506s"}
+{"level":"INFO","time":"2025-10-22 12:00:00","caller":"service/endcase_scheduler.go:95","msg":"🚀 Running scheduled job: syncing end-case data..."}
+{"level":"INFO","time":"2025-10-22 12:00:00","caller":"service/endcase_scheduler.go:119","msg":"请求外部接口参数: map[data:map[begin_date:2025-10-21 end_date:2025-10-22] login_no:atssrmyy password:atssrmyy]"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9912"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10371"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9753"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10409"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10489"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9679"}
+{"level":"INFO","time":"2025-10-22 12:00:01","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9880"}
+{"level":"INFO","time":"2025-10-22 12:00:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9699"}
+{"level":"INFO","time":"2025-10-22 12:00:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=10312"}
+{"level":"INFO","time":"2025-10-22 12:00:02","caller":"service/endcase_scheduler.go:205","msg":"✅ 成功更新结案记录，wm_id=9665"}
+{"level":"INFO","time":"2025-10-22 12:00:02","caller":"service/endcase_scheduler.go:98","msg":"✅ Job completed in 2.207410018s"}

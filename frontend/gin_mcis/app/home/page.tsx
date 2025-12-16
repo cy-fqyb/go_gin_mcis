@@ -1,91 +1,185 @@
-'use client'
+"use client";
 
-import { Layout, Menu, Avatar, Space } from 'antd'
-import { UserOutlined, HomeOutlined, AppstoreOutlined, SettingOutlined, InfoCircleOutlined } from '@ant-design/icons'
-import { useRouter } from 'next/navigation'
+import { use, useEffect, useState } from "react";
+import ReactECharts from "echarts-for-react";
 
-const { Header, Content } = Layout
+// ---- 模拟接口数据 ----
+const fetchPregnantList = () =>
+  Promise.resolve([
+    { name: "李芳", age: 28, weeks: 12, createTime: "09:12" },
+    { name: "王梅", age: 31, weeks: 20, createTime: "09:45" },
+    { name: "周倩", age: 26, weeks: 16, createTime: "10:03" },
+    { name: "赵丽", age: 29, weeks: 22, createTime: "10:15" },
+    { name: "陈娜", age: 34, weeks: 30, createTime: "10:42" },
+  ]);
 
-export default function HomePage() {
-  const router = useRouter()
+const fetchSummaryData = () =>
+  Promise.resolve({
+    total: 58,
+    today: 12,
+    risk: 3,
+  });
 
-  // 顶部导航菜单
-  const menuItems = [
-    { key: 'home', label: '首页', icon: <HomeOutlined /> },
-    { key: 'projects', label: '项目', icon: <AppstoreOutlined /> },
-    { key: 'settings', label: '设置', icon: <SettingOutlined /> },
-    { key: 'about', label: '关于', icon: <InfoCircleOutlined /> },
-  ]
+// ---- 大屏布局 ----
+export default function HomPage() {
+  const [list, setList] = useState([]as any[]);
+  const [summary, setSummary] = useState({ total: 0, today: 0, risk: 0 });
 
-  const onMenuClick = (e: any) => {
-    switch (e.key) {
-      case 'home':
-        router.push('/home')
-        break
-      case 'projects':
-        router.push('/projects')
-        break
-      case 'settings':
-        router.push('/settings')
-        break
-      case 'about':
-        router.push('/about')
-        break
-      default:
-        break
-    }
-  }
+  useEffect(() => {
+    fetchPregnantList().then(setList as any);
+    fetchSummaryData().then(setSummary);
+  }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    router.push('/login')
-  }
+  const chartOption = {
+    textStyle: { color: "#E6F7FF" },
+    xAxis: {
+      type: "category",
+      data: ["一", "二", "三", "四", "五", "六", "日"],
+      axisLine: { lineStyle: { color: "#4FC3F7" } },
+    },
+    yAxis: {
+      type: "value",
+      axisLine: { lineStyle: { color: "#4FC3F7" } },
+      splitLine: { lineStyle: { color: "rgba(255,255,255,0.1)" } },
+    },
+    series: [
+      {
+        data: [12, 16, 11, 18, 19, 22, 15],
+        type: "line",
+        smooth: true,
+        lineStyle: { color: "#4FC3F7", width: 3 },
+        areaStyle: {
+          color: "rgba(79,195,247,0.2)",
+        },
+      },
+    ],
+  };
 
   return (
-    <Layout className="min-h-screen bg-white">
-      {/* 顶部导航栏 */}
-      <Header className="flex justify-between items-center px-10 !bg-white shadow-md">
-        {/* 左侧 Logo + 菜单 */}
-        <div className="flex items-center gap-8">
-          <h1
-            className="text-xl font-bold text-blue-600 cursor-pointer"
-            onClick={() => router.push('/home')}
-          >
-            🌟 MyDashboard
-          </h1>
-          <Menu
-            mode="horizontal"
-            items={menuItems}
-            onClick={onMenuClick}
-            defaultSelectedKeys={['home']}
-            className="border-0 bg-transparent"
-          />
-        </div>
+    <div
+      style={{
+        height: "100%",
+        background: "linear-gradient(180deg, #0A233E 0%, #05101F 100%)",
+        color: "#E6F7FF",
+        padding: 20,
+        boxSizing: "border-box",
+      }}
+    >
+      <header
+        style={{
+          textAlign: "center",
+          fontSize: 32,
+          fontWeight: "bold",
+          letterSpacing: 4,
+          padding: "10px 0",
+          color: "#4FC3F7",
+          textShadow: "0 0 12px rgba(79,195,247,0.6)",
+        }}
+      >
+        妇产科今日数据大屏
+      </header>
 
-        {/* 右侧用户信息 */}
-        <div
-          className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-lg transition"
-          onClick={handleLogout}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 2fr 1fr",
+          gap: 20,
+          height: "calc(100% - 80px)",
+        }}
+      >
+        {/* LEFT MODULE */}
+        <section
+          style={{
+            background: "rgba(15, 36, 64, 0.6)",
+            borderRadius: 12,
+            border: "1px solid rgba(79,195,247,0.4)",
+            padding: 20,
+            overflow: "hidden",
+            position: "relative",
+          }}
         >
-          <Space>
-            <Avatar icon={<UserOutlined />} />
-            <span className="text-gray-700 font-medium">退出登录</span>
-          </Space>
-        </div>
-      </Header>
+          <h3 style={{ fontSize: 20, marginBottom: 10,textAlign: "center" }}>今日建档孕妇名单</h3>
 
-      {/* 页面主体 */}
-      <Content className="p-10">
-        <div className="bg-white rounded-xl shadow-sm p-8">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800">欢迎回来 👋</h2>
-          <p className="text-gray-600 leading-relaxed">
-            枫叶疏林映晚霞，
-            桥横烟水接天涯。
-            古渡寒鸦归渔火，
-            道旁流水绕村家。
-          </p>
-        </div>
-      </Content>
-    </Layout>
-  )
+          <div
+            style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                display: "inline-block",
+                paddingLeft: "100%",
+                animation: "scrollLeft 18s linear infinite",
+              }}
+            >
+              {list.map((item, i) => (
+                <div
+                  key={i}
+                  style={{
+                    fontSize: 16,
+                    marginRight: 40,
+                    display: "inline-block",
+                  }}
+                >
+                  {item.name} · {item.age}岁 · {item.weeks}周 · {item.createTime}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CENTER MODULE */}
+        <section
+          style={{
+            background: "rgba(15, 36, 64, 0.6)",
+            borderRadius: 12,
+            border: "1px solid rgba(79,195,247,0.4)",
+            padding: 20,
+            overflow: "hidden",
+          }}
+        >
+          <h3 style={{ fontSize: 20, marginBottom: 10 }}>本周建档趋势</h3>
+          <ReactECharts option={chartOption} style={{ height: "90%" }} />
+        </section>
+
+        {/* RIGHT MODULE */}
+        <section
+          style={{
+            background: "rgba(15, 36, 64, 0.6)",
+            borderRadius: 12,
+            border: "1px solid rgba(79,195,247,0.4)",
+            padding: 20,
+            overflow: "hidden",
+          }}
+        >
+          <h3 style={{ fontSize: 20, marginBottom: 10 }}>今日总览</h3>
+
+          <div style={{ fontSize: 22, margin: "20px 0" }}>
+            总人数：
+            <span style={{ color: "#4FC3F7", fontSize: 28 }}>{summary.total}</span>
+          </div>
+
+          <div style={{ fontSize: 22, margin: "20px 0" }}>
+            今日建档：
+            <span style={{ color: "#4FC3F7", fontSize: 28 }}>{summary.today}</span>
+          </div>
+
+          <div style={{ fontSize: 22, margin: "20px 0" }}>
+            高风险人数：
+            <span style={{ color: "#F06292", fontSize: 28 }}>{summary.risk}</span>
+          </div>
+        </section>
+      </div>
+
+      {/* CSS ANIMATION */}
+      <style>{`
+        @keyframes scrollLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+      `}</style>
+    </div>
+  );
 }

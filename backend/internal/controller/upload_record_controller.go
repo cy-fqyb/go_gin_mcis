@@ -13,7 +13,7 @@ import (
 
 func init() {
 	RegisterPrivateRoutes(func(r *gin.RouterGroup) {
-		r.GET("/upload_records", GetUploadRecords)
+		r.POST("/upload_records", GetUploadRecords)
 	})
 }
 

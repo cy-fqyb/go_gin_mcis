@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="./js/plugin/jquery-3.7.1.min.js"></script>
+    <script src="./js/api/api.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div class="bg-white shadow-lg rounded-2xl p-8 w-96 text-center">
+        <h1 class="text-2xl font-semibold mb-6">上传文件</h1>
+
+        <!-- 文件选择 -->
+        <input type="file" id="fileInput" class="mb-4 block w-full text-sm text-gray-700" />
+
+        <!-- 上传按钮 -->
+        <button id="uploadBtn"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+            上传
+        </button>
+
+        <!-- 进度条 -->
+        <div class="mt-4 w-full bg-gray-200 rounded-full h-3">
+            <div id="progressBar" class="bg-green-500 h-3 rounded-full" style="width: 0%;"></div>
+        </div>
+        <div id="progressText" class="text-gray-600 mt-2 text-sm">等待上传</div>
+
+        <!-- 上传结果 -->
+        <div id="result" class="mt-4 text-sm text-gray-700"></div>
+    </div>
+
+    <script>
+        // 可选设置：api.baseUrl = 'http://localhost:6677';
+        $('#uploadBtn').on('click', function () {
+            const file = $('#fileInput')[0].files[0];
+            if (!file) {
+                alert('请选择要上传的文件');
+                return;
+            }
+
+            $('#result').text('');
+            $('#progressBar').css('width', '0%');
+            $('#progressText').text('正在上传...');
+
+            // 使用带进度回调的封装
+            api.uploadWithProgress('/api/public/upload', file, {}, percent => {
+                $('#progressBar').css('width', percent + '%');
+                $('#progressText').text(`上传中... ${percent}%`);
+            })
+                .then(data => {
+                    $('#progressText').text('上传完成');
+                    $('#progressBar').css('width', '100%');
+                    $('#result').html(`<span class="text-green-600">上传成功！服务器返回：</span><br><pre class="text-left bg-gray-50 p-2 rounded">${JSON.stringify(data, null, 2)}</pre>`);
+                })
+                .catch(err => {
+                    $('#progressText').text('上传失败');
+                    $('#result').html(`<span class="text-red-600">错误：</span> ${err}`);
+                });
+        });
+    </script>
+</body>
+
+</html>

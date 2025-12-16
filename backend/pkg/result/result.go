@@ -1,4 +1,4 @@
-// internal/pkg/result/result.go
+// Package result internal/pkg/result/result.go
 package result
 
 import (

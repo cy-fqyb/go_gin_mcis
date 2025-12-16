@@ -82,6 +82,13 @@ func GetUploadRecordByType(recordType string, query dto.UploadRecordQuery) ([]mo
 				"JOIN gen_business_1570758835271_tab b ON m.wm_id = b.id",
 			},
 		},
+		"wcbj_xinshenger": {
+			uploadType: "新生儿记录",
+			joins: []string{
+				"JOIN gen_business_1571389271495_tab n ON r.rowId = n.id",
+				"JOIN gen_business_1570758835271_tab b ON n.wm_id = b.id",
+			},
+		},
 	}
 
 	cfg, ok := configs[recordType]
