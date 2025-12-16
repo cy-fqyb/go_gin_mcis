@@ -1,0 +1,46 @@
+server:
+  port: 8080
+  mode: "debug"
+
+database:
+  host: "127.0.0.1"
+  port: 11433
+  user: "sa"
+  password: "Cy2466579213!"
+  name: "fiber_test"
+
+oracleDb:
+  user: "mcis_kezhou"
+  password: "mcis_kezhou"
+  host: "192.168.1.223"
+  port: 1521
+  serviceName: "mcis_kezhou"
+
+app:
+  name: "go_gin_cyfqyb"
+  version: "1.0.1"
+  displayName: "go_gin_cyfqyb"
+  description: "go_结案状态回传程序"
+  tags:
+    - "gin"
+    - "viper"
+    - "hotreload"
+
+features:
+  enableCache: true
+  retryCount: 3
+
+endCaseServer:
+  url: "http://www.wuyouyunyu.com:8090/mcis-web/api/woman/getEndCase.do"
+  cron: "0 */30 * * * *"  # 六段式 cron，带秒，0秒触发，每5分钟一次
+  loginNo: "atssrmyy"
+  password: "atssrmyy"
+  beginDate: "2025-01-01"          # 留空默认昨天
+  endDate: ""            # 留空默认今天
+
+
+
+nestedMap:
+  level1:
+    level2:
+      key: "value"
