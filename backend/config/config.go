@@ -12,17 +12,26 @@ import (
 type Config struct {
 	Server        ServerConfig
 	Database      DatabaseConfig
+	OracleDb      *OracleDbConfig
 	App           AppConfig
 	Features      FeaturesConfig
 	NestedMap     map[string]map[string]map[string]string
-	EndCaseServer EndCaseServerConfig
+	EndCaseServer *EndCaseServerConfig
 }
 
 type ServerConfig struct {
 	Port int
 	Mode string
 }
-
+type OracleDbConfig struct {
+	User             string
+	Password         string
+	Host             string
+	Port             int
+	Sid              string
+	InstantClientDir string
+	Enable           bool
+}
 type DatabaseConfig struct {
 	Host     string
 	Port     int
@@ -51,6 +60,7 @@ type EndCaseServerConfig struct {
 	Password  string
 	BeginDate string
 	EndDate   string
+	Enable    bool
 }
 
 // Cfg 全局变量
@@ -62,22 +72,20 @@ var onChangeCallbacks []func()
 func Init() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".") // 根路径
+
+	viper.AddConfigPath("./config") // ✅ 真正的配置目录
+	//viper.AddConfigPath(".")        // 兜底
 
 	if err := viper.ReadInConfig(); err != nil {
-		// panic(fmt.Errorf("Fatal error config file: %s", err))
 		logger.Fatalf("❌ 读取配置文件失败: %v", err)
 	}
 
 	loadConfig()
 
-	// 监听配置文件变化（热更新）
 	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event) {
-		// fmt.Println("Config file changed:", e.Name)
 		logger.Infof("🔄 配置文件变更: %s", e.Name)
 		loadConfig()
-		// 调用注册的回调函数
 		for _, cb := range onChangeCallbacks {
 			cb()
 		}

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"go_gin_mcis/config"
 	"go_gin_mcis/internal/dto"
 	"go_gin_mcis/internal/model"
 	"go_gin_mcis/pkg/db"
@@ -20,9 +21,23 @@ import (
 )
 
 func init() {
-	RegisterPrivateRoutes(func(r *gin.RouterGroup) {
-		r.POST("/endcase_scheduler", middleware.AutoBind(EndcaseScheduler, reflect.TypeOf(dto.EndcaseSchedulerDTO{})))
-	})
+	RegisterPrivateRoutes(RegisterEndcaseRoutes)
+}
+
+func RegisterEndcaseRoutes(r *gin.RouterGroup) {
+	conf := config.GetConf()
+	if conf == nil || !conf.EndCaseServer.Enable {
+		return
+	}
+	logger.Infof("EndCaseServer.Enable = %v", conf.EndCaseServer.Enable)
+
+	r.POST(
+		"/endcase_scheduler",
+		middleware.AutoBind(
+			EndcaseScheduler,
+			reflect.TypeOf(dto.EndcaseSchedulerDTO{}),
+		),
+	)
 }
 
 // APIResponse 接口响应外层结构

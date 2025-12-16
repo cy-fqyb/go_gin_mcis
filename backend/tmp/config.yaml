@@ -15,6 +15,7 @@ oracleDb:
   host: "192.168.1.223"
   port: 1521
   serviceName: "mcis_kezhou"
+  sid: "ORCL"
 
 app:
   name: "go_gin_cyfqyb"
@@ -37,6 +38,7 @@ endCaseServer:
   password: "atssrmyy"
   beginDate: "2025-01-01"          # 留空默认昨天
   endDate: ""            # 留空默认今天
+  enable: false
 
 
 

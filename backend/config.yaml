@@ -9,6 +9,15 @@ database:
   password: "Cy2466579213!"
   name: "fiber_test"
 
+oracleDb:
+  user: "mcis_kezhou"
+  password: "mcis_kezhou"
+  host: "192.168.1.223"
+  port: 1521
+  serviceName: "mcis_kezhou"
+  sid: "ORCL"
+  enable: true
+
 app:
   name: "go_gin_cyfqyb"
   version: "1.0.1"
@@ -30,6 +39,7 @@ endCaseServer:
   password: "atssrmyy"
   beginDate: "2025-01-01"          # 留空默认昨天
   endDate: ""            # 留空默认今天
+  enable: false
 
 
 
